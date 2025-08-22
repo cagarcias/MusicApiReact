@@ -1,0 +1,38 @@
+.songCard {
+background-color: #282828;
+border-radius: 5px;
+overflow: hidden;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.songCard:hover {
+background-color: #333;
+}
+
+.albumCover {
+width: 100%;
+display: block;
+}
+
+.songInfo {
+padding: 10px;
+color: #fff;
+}
+
+.songTitle {
+margin-bottom: 5px;
+font-size: 1em;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.artistName,
+.albumName {
+font-size: 0.8em;
+color: #b3b3b3;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
