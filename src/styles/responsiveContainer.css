@@ -1,0 +1,76 @@
+/* Base styles for the device container (simulates a PC) */
+.device-container {
+    background-color: #f0f2f5; /* Light gray background */
+    border: 20px solid #333; /* Dark gray border for the PC frame */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    width: 90%; /* Occupy most of the screen */
+    max-width: 1200px; /* Maximum width for PC view */
+    height: 70vh; /* Adjust height as needed */
+    margin: 50px auto; /* Center the container */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out; /* Smooth transition for resizing */
+}
+
+/* Styles for the content inside the device container (your App) */
+.device-container > div {
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Allow scrolling if content overflows */
+    /* Content background */
+    border-radius: 5px; /* Slight rounding for the content area */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .device-container {
+        border: 10px solid #222; /* Thinner border for mobile */
+        border-radius: 40px; /* More rounded corners for mobile */
+        width: 375px; /* Common mobile width (e.g., iPhone X) */
+        height: 812px; /* Common mobile height */
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Stronger shadow for mobile */
+        margin: 20px auto; /* Adjust margin for mobile view */
+        /* Add some specific mobile device features */
+        position: relative;
+    }
+
+    /* Simulate a notch/speaker area for mobile */
+    .device-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 20px;
+        background-color: #222;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        z-index: 10;
+    }
+
+    /* Simulate a home button for older mobile designs (optional) */
+    .device-container::after {
+        content: '';
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        border: 2px solid #555;
+        border-radius: 50%;
+        box-sizing: border-box;
+        z-index: 10;
+        display: none; /* Hide by default, show if needed for a specific mobile look */
+    }
+
+    /* Ensure the App content takes full space within the mobile frame */
+    .device-container > div {
+        border-radius: 30px; /* Content matches rounded mobile frame */
+    }
+}

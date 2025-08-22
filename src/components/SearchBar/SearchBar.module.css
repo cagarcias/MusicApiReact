@@ -1,0 +1,81 @@
+.searchBar {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on smaller screens */
+  gap: 10px;
+  padding: 20px;
+  width: 100%; /* Ensure it takes full width of its parent */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  background-color: #181818; /* Dark background similar to Spotify */
+}
+
+/* Styles for the form that contains the input, select, and button */
+.searchBar form {
+  display: flex;
+  align-items: center; /* Vertically center the form elements */
+  gap: 10px;
+  width: 100%;
+}
+
+/* Styles for the search input field */
+.searchInput {
+  flex: 1; /* Allows the input to grow and take up the remaining space */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #282828; /* Slightly lighter dark background for the input */
+  color: #fff;
+}
+
+/* Styles for both the filter dropdown and the search button */
+.filterSelect,
+.searchButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1ed760; /* Spotify green */
+  color: #fff;
+  cursor: pointer;
+  width: 50%;
+}
+
+/* PC View styles (for screens wider than 769px) */
+@media (min-width: 769px) {
+  .searchBar {
+    flex-direction: row; /* Arrange items horizontally on PC */
+    align-items: center;
+    justify-content: space-between;
+    /* The width is now controlled by the parent .container in layout.module.css */
+    width: auto;
+  }
+  .searchBar form {
+  display: flex;
+  align-items: center; /* Vertically center the form elements */
+  gap: 10px;
+  width:auto;
+}
+
+/* Styles for the search input field */
+.searchInput {
+  flex: 1; /* Allows the input to grow and take up the remaining space */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #282828; /* Slightly lighter dark background for the input */
+  color: #fff;
+  width:auto;
+  
+}
+
+/* Styles for both the filter dropdown and the search button */
+.filterSelect,
+.searchButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1ed760; /* Spotify green */
+  color: #fff;
+  cursor: pointer;
+  width:auto;
+  
+}
+}
